@@ -14,7 +14,6 @@ pub const HEIGHT: usize = 10;
 // define struct board, contains selfspcs (your board with ships) and enemyspcs (enemy board that
 // only shows your moves), both are 2d array with height * [width], and a [] of ships
 pub struct Board {
-    pub name: String,
     pub self_spaces: [[char; WIDTH]; HEIGHT],
     pub enemy_spaces: [[char; WIDTH]; HEIGHT],
     pub ships: [ship::Ship; 5],
@@ -139,9 +138,8 @@ impl Board {
 }
 
 // sets up board struct: fills arrays with water, creates the ships that will be placed on board
-pub fn board_factory(name: String) -> Board {
+pub fn board_factory() -> Board {
     return Board {
-        name: name.to_string(),
         self_spaces: [[WATER; WIDTH]; HEIGHT],
         enemy_spaces: [[WATER; WIDTH]; HEIGHT],
         ships: [

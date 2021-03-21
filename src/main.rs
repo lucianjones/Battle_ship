@@ -10,10 +10,10 @@ use user_input::get_y;
 
 fn main() {
     // declares cpu board struct then initializes it
-    let mut comp_board = board::board_factory("comp board".to_string());
+    let mut comp_board = board::board_factory();
     comp_board.init();                              
     // same as above but for player board
-    let mut player_board = board::board_factory("player board".to_string());
+    let mut player_board = board::board_factory();
     player_board.init();
 
     // prints cpu board without ships visible and user board with ship shown
